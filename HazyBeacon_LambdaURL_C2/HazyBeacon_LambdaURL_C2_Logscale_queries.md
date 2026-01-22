@@ -1,7 +1,6 @@
 # Lambda URL Covert C2 - LogScale Queries
 
-Queries below are copied from the dashboard YAML. Adjust allowlists and
-paths to your environment as needed.
+Adjust allowlists and paths to your environment as needed.
 
 ## Non browser DNS requests to lambda domains
 ```logscale
