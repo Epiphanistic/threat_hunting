@@ -122,7 +122,7 @@ From public reporting (F5 threat report and secondary writeups, based on forum-r
 Note: No authoritative list of malicious hashes or payload C2 infrastructure has been published by Notepad++. Treat third-party IoCs as incident-specific until validated.
 
 ## IOC JSON mapping
-Source of truth for indicators: `Notepad_Plus_Plus_Hijacked/Notepad_Plus_Plus_Hijacked_IOCs.json`
+Source of truth for indicators: [Notepad_Plus_Plus_Hijacked_IOCs.json](Notepad_Plus_Plus_Hijacked_IOCs.json)
 - Fields: `indicator`, `type`, `attributed_to`, `source_urls`, `confidence`, `tactic_or_use`, `notes`
 - Coverage includes filenames, domains, URLs, IPs, and behavioral heuristics with source attribution
 - Caution: indicators are incident-reported; validate with process lineage, signer metadata, and time alignment before action.
