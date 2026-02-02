@@ -59,6 +59,7 @@ Date: 2026-02-02
 - Notepad++ v8.8.8 release notice: https://notepad-plus-plus.org/news/v888-released/
 - Notepad++ v8.8.9 release notice: https://notepad-plus-plus.org/news/v889-released/
 - Notepad++ v8.9 release notice: https://notepad-plus-plus.org/news/v89-released/
+- Notepad++ hijacked incident info update: https://notepad-plus-plus.org/news/hijacked-incident-info-update/
 - Rwanda NCSA alert: https://cyber.gov.rw/updates/article/security-alert-notepad-update-vulnerability-enables-malware-installation/
 - BleepingComputer recap: https://www.bleepingcomputer.com/news/security/notepad-plus-plus-fixes-flaw-that-let-attackers-push-malicious-update-files/
 - F5 threat report: https://community.f5.com/kb/security-insights/f5-threat-report---december-17th-2025/344787
@@ -72,3 +73,4 @@ Date: 2026-02-02
 - TechWorm: https://www.techworm.net/2025/12/notepad-fixes-major-update-flaw-that-let-attackers-push-malware.html
 - Heise: https://www.heise.de/en/news/Notepad-updater-installed-malware-11109726.html
 - Notepad++ community forum thread: https://community.notepad-plus-plus.org/topic/27212/autoupdater-and-connection-temp-sh
+- ThreatHuntingFather Telegram post: https://t.me/ThreatHuntingFather/1130

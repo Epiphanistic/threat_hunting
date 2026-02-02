@@ -5,7 +5,9 @@
     "attributed_to": "Hunt guidance",
     "source_urls": [
       "https://notepad-plus-plus.org/news/v889-released/",
-      "https://www.f5.com/labs/articles/threat-intelligence/notepadplusplus-updater-hijack"
+      "https://www.f5.com/labs/articles/threat-intelligence/notepadplusplus-updater-hijack",
+      "https://notepad-plus-plus.org/news/hijacked-incident-info-update/",
+      "https://t.me/ThreatHuntingFather/1130"
     ],
     "confidence": "high",
     "tactic_or_use": "analysis caveat",
@@ -21,7 +23,9 @@
       "https://www.heise.de/en/news/Notepad-updater-installed-malware-11109726.html",
       "https://www.bleepingcomputer.com/news/security/notepad-plus-plus-fixes-flaw-that-let-attackers-push-malicious-update-files/",
       "https://securityaffairs.com/185622/hacking/notepad-fixed-updater-bugs-that-allowed-malicious-update-hijacking.html",
-      "https://cyber.gov.rw/updates/article/security-alert-notepad-update-vulnerability-enables-malware-installation/"
+      "https://cyber.gov.rw/updates/article/security-alert-notepad-update-vulnerability-enables-malware-installation/",
+      "https://notepad-plus-plus.org/news/hijacked-incident-info-update/",
+      "https://t.me/ThreatHuntingFather/1130"
     ],
     "confidence": "medium",
     "tactic_or_use": "payload execution / post-update activity",
@@ -36,7 +40,9 @@
       "https://doublepulsar.com/small-numbers-of-notepad-users-reporting-security-woes-371d7a3fd2d9",
       "https://cyber.gov.rw/updates/article/security-alert-notepad-update-vulnerability-enables-malware-installation/",
       "https://www.heise.de/en/news/Notepad-updater-installed-malware-11109726.html",
-      "https://securityaffairs.com/185622/hacking/notepad-fixed-updater-bugs-that-allowed-malicious-update-hijacking.html"
+      "https://securityaffairs.com/185622/hacking/notepad-fixed-updater-bugs-that-allowed-malicious-update-hijacking.html",
+      "https://notepad-plus-plus.org/news/hijacked-incident-info-update/",
+      "https://t.me/ThreatHuntingFather/1130"
     ],
     "confidence": "low",
     "tactic_or_use": "payload execution / staging",
@@ -51,7 +57,9 @@
       "https://community.notepad-plus-plus.org/topic/27212/autoupdater-and-connection-temp-sh",
       "https://www.bleepingcomputer.com/news/security/notepad-plus-plus-fixes-flaw-that-let-attackers-push-malicious-update-files/",
       "https://hackmag.com/news/notepad-bug",
-      "https://securityaffairs.com/185622/hacking/notepad-fixed-updater-bugs-that-allowed-malicious-update-hijacking.html"
+      "https://securityaffairs.com/185622/hacking/notepad-fixed-updater-bugs-that-allowed-malicious-update-hijacking.html",
+      "https://notepad-plus-plus.org/news/hijacked-incident-info-update/",
+      "https://t.me/ThreatHuntingFather/1130"
     ],
     "confidence": "medium",
     "tactic_or_use": "exfiltration destination",
@@ -63,7 +71,8 @@
     "attributed_to": "Reported exfil upload URL used by AutoUpdater.exe via curl.exe",
     "source_urls": [
       "https://community.notepad-plus-plus.org/topic/27212/autoupdater-and-connection-temp-sh",
-      "https://www.bleepingcomputer.com/news/security/notepad-plus-plus-fixes-flaw-that-let-attackers-push-malicious-update-files/"
+      "https://www.bleepingcomputer.com/news/security/notepad-plus-plus-fixes-flaw-that-let-attackers-push-malicious-update-files/",
+      "https://t.me/ThreatHuntingFather/1130"
     ],
     "confidence": "medium",
     "tactic_or_use": "exfiltration endpoint",
@@ -75,7 +84,8 @@
     "attributed_to": "Reported blocklisted IP associated with temp.sh in forum report",
     "source_urls": [
       "https://community.notepad-plus-plus.org/topic/27212/autoupdater-and-connection-temp-sh",
-      "https://www.bleepingcomputer.com/news/security/notepad-plus-plus-fixes-flaw-that-let-attackers-push-malicious-update-files/"
+      "https://www.bleepingcomputer.com/news/security/notepad-plus-plus-fixes-flaw-that-let-attackers-push-malicious-update-files/",
+      "https://t.me/ThreatHuntingFather/1130"
     ],
     "confidence": "low",
     "tactic_or_use": "exfiltration infrastructure (reported)",
@@ -98,7 +108,8 @@
     "type": "command_line",
     "attributed_to": "Reported GUP.exe invocation preceding AutoUpdater.exe",
     "source_urls": [
-      "https://community.notepad-plus-plus.org/topic/27212/autoupdater-and-connection-temp-sh"
+      "https://community.notepad-plus-plus.org/topic/27212/autoupdater-and-connection-temp-sh",
+      "https://t.me/ThreatHuntingFather/1130"
     ],
     "confidence": "low",
     "tactic_or_use": "update chain context",
@@ -109,7 +120,8 @@
     "type": "command_line",
     "attributed_to": "Reported AutoUpdater.exe execution arguments",
     "source_urls": [
-      "https://community.notepad-plus-plus.org/topic/27212/autoupdater-and-connection-temp-sh"
+      "https://community.notepad-plus-plus.org/topic/27212/autoupdater-and-connection-temp-sh",
+      "https://t.me/ThreatHuntingFather/1130"
     ],
     "confidence": "low",
     "tactic_or_use": "payload execution context",
@@ -122,7 +134,8 @@
     "source_urls": [
       "https://www.f5.com/labs/articles/threat-intelligence/notepadplusplus-updater-hijack",
       "https://www.bleepingcomputer.com/news/security/notepad-plus-plus-fixes-flaw-that-let-attackers-push-malicious-update-files/",
-      "https://hackmag.com/news/notepad-bug"
+      "https://hackmag.com/news/notepad-bug",
+      "https://t.me/ThreatHuntingFather/1130"
     ],
     "confidence": "low",
     "tactic_or_use": "exfil staging",
@@ -135,7 +148,8 @@
     "source_urls": [
       "https://www.f5.com/labs/articles/threat-intelligence/notepadplusplus-updater-hijack",
       "https://www.bleepingcomputer.com/news/security/notepad-plus-plus-fixes-flaw-that-let-attackers-push-malicious-update-files/",
-      "https://hackmag.com/news/notepad-bug"
+      "https://hackmag.com/news/notepad-bug",
+      "https://t.me/ThreatHuntingFather/1130"
     ],
     "confidence": "low",
     "tactic_or_use": "discovery",
@@ -221,7 +235,8 @@
     "source_urls": [
       "https://www.f5.com/labs/articles/threat-intelligence/notepadplusplus-updater-hijack",
       "https://notepad-plus-plus.org/news/v889-released/",
-      "https://www.bleepingcomputer.com/news/security/notepad-plus-plus-fixes-flaw-that-let-attackers-push-malicious-update-files/"
+      "https://www.bleepingcomputer.com/news/security/notepad-plus-plus-fixes-flaw-that-let-attackers-push-malicious-update-files/",
+      "https://notepad-plus-plus.org/news/hijacked-incident-info-update/"
     ],
     "confidence": "high",
     "tactic_or_use": "update manifest retrieval (baseline reference)",
@@ -232,7 +247,8 @@
     "type": "url",
     "attributed_to": "Reported WinGUp update URL format used to retrieve XML with download location",
     "source_urls": [
-      "https://www.bleepingcomputer.com/news/security/notepad-plus-plus-fixes-flaw-that-let-attackers-push-malicious-update-files/"
+      "https://www.bleepingcomputer.com/news/security/notepad-plus-plus-fixes-flaw-that-let-attackers-push-malicious-update-files/",
+      "https://notepad-plus-plus.org/news/hijacked-incident-info-update/"
     ],
     "confidence": "high",
     "tactic_or_use": "update manifest retrieval (baseline reference)",

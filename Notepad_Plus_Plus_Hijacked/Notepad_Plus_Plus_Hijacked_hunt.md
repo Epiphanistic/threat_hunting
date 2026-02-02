@@ -132,6 +132,7 @@ Source of truth for indicators: [Notepad_Plus_Plus_Hijacked_IOCs.json](Notepad_P
 | Source | IoCs / behaviors cited |
 | --- | --- |
 | Notepad++ v8.8.9 release notice | Baseline update domains and hardened validation (no malicious hashes) |
+| Notepad++ hijacked incident info update | Incident update context; reinforces update-chain risk and mitigations |
 | Notepad++ community thread (topic 27212) | AutoUpdater.exe in TEMP, temp.sh upload URL, update.exe, sample command lines |
 | F5 threat report (Dec 17, 2025) | AutoUpdater.exe, recon commands, temp.sh exfil, a.txt staging |
 | BleepingComputer recap (Dec 11, 2025) | temp.sh exfil, recon command list, updater URL format |
@@ -139,6 +140,7 @@ Source of truth for indicators: [Notepad_Plus_Plus_Hijacked_IOCs.json](Notepad_P
 | NCSA alert (Rwanda) | Affected versions < 8.8.9 and malicious updater activity warning |
 | Heise recap | Suspicious updater behavior and non-standard child processes |
 | Security Affairs recaps | Targeting context and updater weakness discussion (secondary) |
+| ThreatHuntingFather (Telegram) | Additional community-reported indicators; treat as secondary |
 
 ## IOC validation checklist (analyst appendix)
 - Verify the process chain: confirm updater/installer parentage and whether execution context matches user-initiated updates.
@@ -156,6 +158,7 @@ Notepad++ release notes and public reporting:
 https://notepad-plus-plus.org/news/v889-released/
 https://notepad-plus-plus.org/news/v89-released/
 https://notepad-plus-plus.org/news/v888-released/
+https://notepad-plus-plus.org/news/hijacked-incident-info-update/
 https://www.bleepingcomputer.com/news/security/notepad-plus-plus-fixes-flaw-that-let-attackers-push-malicious-update-files/
 https://securityaffairs.com/185622/hacking/notepad-fixed-updater-bugs-that-allowed-malicious-update-hijacking.html
 https://securityaffairs.com/187531/security/nation-state-hack-exploited-hosting-infrastructure-to-hijack-notepad-updates.html
@@ -168,6 +171,7 @@ https://www.techworm.net/2025/12/notepad-fixes-major-update-flaw-that-let-attack
 https://community.notepad-plus-plus.org/topic/27212/autoupdater-and-connection-temp-sh
 https://doublepulsar.com/small-numbers-of-notepad-users-reporting-security-woes-371d7a3fd2d9
 https://www.heise.de/en/news/Notepad-updater-installed-malware-11109726.html
+https://t.me/ThreatHuntingFather/1130
 ```
 
 F5 threat reporting (supporting indicators):
