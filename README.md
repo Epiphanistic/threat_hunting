@@ -40,7 +40,7 @@ Each hunt folder generally aims to include:
 | [`P2P_Policy_Violation`](P2P_Policy_Violation) | Policy-driven hunt for P2P/proxyware usage, high-risk examples, and broader in-scope tooling | Endpoint inventory, DNS pivots, and remediation targets |
 | [`OAST_Domains`](OAST_Domains) | OAST callback and public-tunnel domain hunting with high-entropy DNS pivots | OAST signal inventory, tunnel exposure review, and testing validation |
 | [`HazyBeacon_LambdaURL_C2`](HazyBeacon_LambdaURL_C2) | Hunt for AWS Lambda URL abuse as covert C2 (HazyBeacon/CL-STA-1020) | Non-browser DNS to lambda-url.on.aws and correlated detections |
-| [`Notepad_Plus_Plus_Hijacked`](Notepad_Plus_Plus_Hijacked) | WinGUp updater hijack exposure and post-update behavioral hunting | Exposure inventory, suspicious installer chains, and triage guidance |
+| [`LotusBlossom_Billbug_Notepad++_hijack`](LotusBlossom_Billbug_Notepad++_hijack) | WinGUp updater hijack exposure, Chrysalis backdoor chain, and Lotus Blossom attribution | Exposure inventory, suspicious installer chains, Chrysalis artifacts, and triage guidance |
 
 > Note: Folder contents may vary based on what telemetry was available and whether the hunt was performed as incident-led, OSINT-led, or proactive coverage work.
 
