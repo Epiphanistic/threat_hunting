@@ -1,4 +1,6 @@
-  # ConnectWise ScreenConnect (Control) — Logscale Queries
+# ConnectWise ScreenConnect (Control) — Logscale Queries
+These queries are untested in your environment and are provided as guidance/examples. Validate and tune before operational use.
+
 
   ## macOS — LaunchAgent/Daemon persistence via `launchctl`
   Time: 30d

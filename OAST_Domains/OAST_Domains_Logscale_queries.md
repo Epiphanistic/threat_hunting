@@ -1,4 +1,6 @@
 # OAST Domains - LogScale Queries
+These queries are untested in your environment and are provided as guidance/examples. Validate and tune before operational use.
+
 
 Adjust allowlists and paths to your environment as needed.
 

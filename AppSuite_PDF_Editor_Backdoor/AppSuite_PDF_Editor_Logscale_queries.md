@@ -1,4 +1,6 @@
 # AppSuite PDF Editor Backdoor - LogScale Queries
+These queries are untested in your environment and are provided as guidance/examples. Validate and tune before operational use.
+
 
 Queries below are copied from the dashboard YAML. Use the dashboard time
 ranges as a guide (some widgets use 1d/7d/1y windows).

@@ -1,4 +1,6 @@
 # RedDirection Chrome/Edge Malicious Extensions - LogScale Queries
+These queries are untested in your environment and are provided as guidance/examples. Validate and tune before operational use.
+
 
 Queries below are taken from the dashboard YAML. The `dart-9697-cancer-unique_aid.csv` lookup is
 used as an exclusion list for known hosts; replace or remove it if not available.

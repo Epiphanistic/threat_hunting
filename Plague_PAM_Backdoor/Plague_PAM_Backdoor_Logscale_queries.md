@@ -1,4 +1,6 @@
 # Plague PAM-Based Backdoor - LogScale Queries
+These queries are untested in your environment and are provided as guidance/examples. Validate and tune before operational use.
+
 
 Queries below are copied from the dashboard YAML. Adjust allowlists and
 paths to your environment as needed.
