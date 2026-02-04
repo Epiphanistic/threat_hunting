@@ -41,6 +41,7 @@ Each hunt folder generally aims to include:
 | [`OAST_Domains`](OAST_Domains) | OAST callback and public-tunnel domain hunting with high-entropy DNS pivots | OAST signal inventory, tunnel exposure review, and testing validation |
 | [`HazyBeacon_LambdaURL_C2`](HazyBeacon_LambdaURL_C2) | Hunt for AWS Lambda URL abuse as covert C2 (HazyBeacon/CL-STA-1020) | Non-browser DNS to lambda-url.on.aws and correlated detections |
 | [`LotusBlossom_Billbug_Notepad++_hijack`](LotusBlossom_Billbug_Notepad++_hijack) | WinGUp updater hijack exposure, Chrysalis backdoor chain, and Lotus Blossom attribution | Exposure inventory, suspicious installer chains, Chrysalis artifacts, and triage guidance |
+| [`Operation_Neusploit_APT28_CVE-2026021509`](Operation_Neusploit_APT28_CVE-2026021509) | Operation Neusploit (APT28) hunt for CVE-2026-21509 weaponized RTF exploitation and MiniDoor/PixyNetLoader chains | WebDAV LNK staging pivots, payload artifact hunting, and persistence triage |
 
 > Note: Folder contents may vary based on what telemetry was available and whether the hunt was performed as incident-led, OSINT-led, or proactive coverage work.
 
