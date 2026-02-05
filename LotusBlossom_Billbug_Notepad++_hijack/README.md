@@ -20,3 +20,5 @@ This folder covers the reported WinGUp updater hijack activity affecting Notepad
 3) Use [LotusBlossom_Billbug_Notepad++_hijack_IOCs.json](LotusBlossom_Billbug_Notepad++_hijack_IOCs.json) to validate suspicious artifacts and network indicators.
 4) Use [LotusBlossom_attacker_infrastructure_analysis_based_on_censys_report.md](LotusBlossom_attacker_infrastructure_analysis_based_on_censys_report.md) to understand infrastructure behavior patterns and supporting OSINT.
 5) Follow triage and exit criteria in [LotusBlossom_Billbug_Notepad++_hijack_hunt.md](LotusBlossom_Billbug_Notepad++_hijack_hunt.md).
+
+
