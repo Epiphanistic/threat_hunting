@@ -42,6 +42,7 @@ Each hunt folder generally aims to include:
 | [`HazyBeacon_LambdaURL_C2`](HazyBeacon_LambdaURL_C2) | Hunt for AWS Lambda URL abuse as covert C2 (HazyBeacon/CL-STA-1020) | Non-browser DNS to lambda-url.on.aws and correlated detections |
 | [`LotusBlossom_Billbug_Notepad++_hijack`](LotusBlossom_Billbug_Notepad++_hijack) | WinGUp updater hijack exposure, Chrysalis backdoor chain, and Lotus Blossom attribution | Exposure inventory, suspicious installer chains, Chrysalis artifacts, and triage guidance |
 | [`Operation_Neusploit_APT28_CVE-2026021509`](Operation_Neusploit_APT28_CVE-2026021509) | Operation Neusploit (APT28) hunt for CVE-2026-21509 weaponized RTF exploitation and MiniDoor/PixyNetLoader chains | WebDAV LNK staging pivots, payload artifact hunting, and persistence triage |
+| [`DLL_Sideloading_Campaign_abusing_ahost_exe`](DLL_Sideloading_Campaign_abusing_ahost_exe) | Multi-actor DLL sideloading abuse of signed `ahost.exe` with malicious `libcares-2.dll`, including DCRat and add-in process injection tradecraft | Behavior-first sideload chain detection, trusted-binary abuse triage, and command-and-control/domain pivots |
 
 > Note: Folder contents may vary based on what telemetry was available and whether the hunt was performed as incident-led, OSINT-led, or proactive coverage work.
 
