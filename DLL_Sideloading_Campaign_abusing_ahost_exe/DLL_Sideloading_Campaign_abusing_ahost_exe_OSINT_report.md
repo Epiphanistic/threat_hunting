@@ -75,8 +75,3 @@ Supporting detail:
 - https://www.trellix.com/en-au/blogs/research/hiding-in-plain-sight-multi-actor-ahost-exe-attacks/
 - https://thehackernews.com/2026/01/hackers-exploit-c-ares-dll-side-loading.html
 - https://www.cybersecurity-help.cz/blog/5173.html
-- https://any.run/report/7b66bf96c2e5c9a8acdc44f16453b182588f21767d4c0e06eaf9936f033f57db/f30de6d0-3cbc-4909-9f08-1154abf060ff
-- https://any.run/report/82531a17e0d2643d8da9bf5ecbcfe7a54f998ee45f37d2905343f42d2f6687ce/8dd88d86-39af-45ef-abf2-9263b2b85170
-- https://any.run/report/e2f7f2575e47b94221296f42d0e9b4b3ca3789e27e34f75efca6eb58c6742f96/9f5a218d-6fa8-4a03-8345-972f34bf0da6
-- https://hybrid-analysis.com/sample/66563bbfca3caf9f4cce9859a6fbbf65c73d919f07f88f76f4f0315ec3ad99d0/67de3fc0ec2afcc68f01bb81
-- https://hybrid-analysis.com/sample/6deb53f0ef8b5ca911f31f0b302f3060f50a4d6bef9af3a6aef542e8d0d6f264/67040ca2f3502dbf650dcff7
