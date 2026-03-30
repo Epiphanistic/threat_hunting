@@ -4,14 +4,14 @@ This folder covers the March 2026 Trivy ecosystem compromise, including the Marc
 
 ## Deliverables
 - [Trivy_Ecosystem_Supply_Chain_Compromise_hunt.md](Trivy_Ecosystem_Supply_Chain_Compromise_hunt.md) - primary hunt playbook, scoping logic, validation path, and response guidance.
-- [Trivy_Ecosystem_Supply_Chain_Compromise_Logscale_queries.md](Trivy_Ecosystem_Supply_Chain_Compromise_Logscale_queries.md) - repo-style query priorities and scoping pivots for building or tuning platform-specific detections.
+- [trivy_teampcp_high_roi_kql_pack.md](trivy_teampcp_high_roi_kql_pack.md) - Microsoft Defender XDR and Sentinel KQL pack for scoping runner theft, follow-on persistence, and downstream package activity.
 - [Trivy_Ecosystem_Supply_Chain_Compromise_OSINT_report.md](Trivy_Ecosystem_Supply_Chain_Compromise_OSINT_report.md) - normalized incident synthesis, timeline, and cluster boundaries.
 
 ## Notes
 - This case intentionally keeps March 19 runner theft, Docker follow-on, OpenVSX, and CanisterWorm as related but separate clusters.
-- The query file is a repo-shaped scoping artifact, not a fully built platform-specific query pack.
+- The KQL pack is Defender and Sentinel-specific and still needs local schema, allowlist, and retention tuning.
 
 ## Suggested workflow
 1. Read [Trivy_Ecosystem_Supply_Chain_Compromise_OSINT_report.md](Trivy_Ecosystem_Supply_Chain_Compromise_OSINT_report.md) to understand the timeline, boundaries, and safe-version anchors.
-2. Use [Trivy_Ecosystem_Supply_Chain_Compromise_Logscale_queries.md](Trivy_Ecosystem_Supply_Chain_Compromise_Logscale_queries.md) to scope workflows, runners, Docker pulls, and downstream follow-on activity.
+2. Use [trivy_teampcp_high_roi_kql_pack.md](trivy_teampcp_high_roi_kql_pack.md) to scope runners, persistence, suspicious egress, and downstream package activity in Defender or Sentinel.
 3. Work validation and containment from [Trivy_Ecosystem_Supply_Chain_Compromise_hunt.md](Trivy_Ecosystem_Supply_Chain_Compromise_hunt.md).

@@ -140,7 +140,7 @@ Hunt action: Search for GitHub release or asset-upload activity tied to `tpcp-do
 Expected signal: Unauthorized GitHub write activity linked to affected CI identities and suspicious runner behavior.
 
 ## Query Pack
-Repo-aligned query priorities are in `Trivy_Ecosystem_Supply_Chain_Compromise_Logscale_queries.md`.
+The Microsoft Defender XDR and Sentinel query pack is in `trivy_teampcp_high_roi_kql_pack.md`.
 
 ## Expected Outcomes
 - Affected Trivy references are followed by pre-scan shell or Python execution, runner-process discovery, procfs access, and outbound traffic to `scan.aquasecurtiy.org`. This is the strongest confirmation path for the March 19 runner-theft chain.
